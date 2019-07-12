@@ -1,0 +1,8 @@
+FROM golang:alpine3.9
+
+RUN apk update \
+    && apk upgrade \
+    && apk add git \
+    && go get -u github.com/go-kit/kit/examples/shipping \
+    && cd /go/src/github.com/go-kit/kit/examples/shipping \
+    && go build
